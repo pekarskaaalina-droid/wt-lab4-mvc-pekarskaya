@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Студенческий портал</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Hover-эффект для карточек */
+        .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; }
+        
+        /* Красивый фон */
+        body { background-color: #f8f9fa; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { flex: 1; }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                <i class="bi bi-mortarboard-fill"></i> Студенческий портал
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            <i class="bi bi-house-door"></i> Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Students" asp-action="Index">
+                            <i class="bi bi-people-fill"></i> Студенты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 - Студенческий портал (WT-4)</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

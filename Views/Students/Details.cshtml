@@ -1,0 +1,44 @@
+@model wt_lab4_mvc_pekarskaya.Models.Student
+
+@{
+    ViewData["Title"] = "Информация о студенте";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4">
+                    <h1 class="h3 mb-4">Информация о студенте #@Model.Id</h1>
+
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">ФИО:</dt>
+                        <dd class="col-sm-8">@Model.FullName</dd>
+
+                        <dt class="col-sm-4">Группа:</dt>
+                        <dd class="col-sm-8">@Model.Group</dd>
+
+                        <dt class="col-sm-4">Средний балл:</dt>
+                        <dd class="col-sm-8">@Model.AverageGrade.ToString("F2")</dd>
+
+                        <dt class="col-sm-4">Статус:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.IsActive)
+                            {
+                                <span class="badge bg-success">Активен</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Неактивен</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <div class="mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary">← К списку</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

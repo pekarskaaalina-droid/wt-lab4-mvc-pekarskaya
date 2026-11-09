@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Студент не найден";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-5">
+                    <div class="display-1 text-warning mb-3 fw-bold">404</div>
+                    <h1 class="h3 mb-3">Студент не найден</h1>
+                    <p class="text-muted mb-4">
+                        К сожалению, студент с указанным ID не существует в базе данных.
+                    </p>
+                    <a asp-action="Index" class="btn btn-primary px-4">
+                        ← Вернуться к списку студентов
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

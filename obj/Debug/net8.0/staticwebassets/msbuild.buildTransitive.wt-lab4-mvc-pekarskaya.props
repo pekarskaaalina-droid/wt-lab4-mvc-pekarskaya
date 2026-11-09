@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/wt-lab4-mvc-pekarskaya.props" />
+</Project>
